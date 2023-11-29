@@ -1,8 +1,6 @@
-function reverseString(str) {
-  return str.split('').reverse().join('');
+const isMozilla =
+  window?.navigator?.userAgent?.toString().toLowerCase().includes('firefox') ?? false;
+for (let index = 0; index < urls.length; index++) {
+  const url = isMozilla ? urls.reverse()[index] : urls[index];
+  window.open(url, "_blank");
 }
-
-setInterval(function() {
-  const newWindow = window.open('', 'trojan');
-  newWindow.document.write('This is a popup!');
-}, 10);
