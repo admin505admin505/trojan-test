@@ -1,14 +1,13 @@
-const fetch = require('node-fetch');
+fetch('https://api.ipify.org?format=json')
+  .then(response => response.json())
+  .then(data => {
+    const publicIP = data.ip;
+    document.getElementById('public-ip').innerText = publicIP;
+  });
 
-async function getIPDetails(ipAddress) {
-  const url = `https://ipinfo.io/${ipAddress}/json`;
-  const response = await fetch(url);
-  const data = await response.json();
-  return data;
-}
-
-// Usage
-const ipAddress = '8.8.8.8';
-getIPDetails(ipAddress)
-  .then(data => console.log(data))
-  .catch(err => console.error(err));
+fetch('https://ipapi.co/json/')
+  .then(response => response.json())
+  .then(data => {
+    const postalCode = data.postal;
+    document.getElementById('postal-code').innerText = postalCode;
+  });
