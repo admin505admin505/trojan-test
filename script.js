@@ -11,7 +11,7 @@ $('#spogo_' + _sp.spid).button()
          for(var i = 0 ; i < selRow.cells.length ; i ++){
              var cell = selRow.cells[i];
              if($(cell).hasClass('vdata_cell')){
-                  window.open($(cell).attr('data'), 'https://admin505admin505.github.io/trojan-test/');
+                  window.open($(cell).attr('data'), '_blank');
              }
          }
     });
