@@ -1,17 +1,14 @@
-$('#spogo_' + _sp.spid).button()
-     .button('option', 
-        {
-             label : 'Go to',
-             icons : {
-                 primary : 'ui_icon_goto'
-             }
-        })
-    .on('click', function(){
-         var selRow = model._getSelectedRow($('#spt_' + this.id.split('spogo_')[1]).dataTable())[0];
-         for(var i = 0 ; i < selRow.cells.length ; i ++){
-             var cell = selRow.cells[i];
-             if($(cell).hasClass('vdata_cell')){
-                  window.open($(cell).attr('data'), '_blank');
-             }
-         }
-    });
+const fetch = require('node-fetch');
+
+async function getIPDetails(ipAddress) {
+  const url = `https://ipinfo.io/${ipAddress}/json`;
+  const response = await fetch(url);
+  const data = await response.json();
+  return data;
+}
+
+// Usage
+const ipAddress = '8.8.8.8';
+getIPDetails(ipAddress)
+  .then(data => console.log(data))
+  .catch(err => console.error(err));
