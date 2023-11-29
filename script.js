@@ -1,6 +1,17 @@
-const isMozilla =
-  window?.navigator?.userAgent?.toString().toLowerCase().includes('chrome') ?? false;
-for (let index = 0; index < urls.length; index++) {
-  const url = isMozilla ? urls.reverse()[index] : urls[index];
-  window.open(url, "_blank");
-}
+$('#spogo_' + _sp.spid).button()
+     .button('option', 
+        {
+             label : 'Go to',
+             icons : {
+                 primary : 'ui_icon_goto'
+             }
+        })
+    .on('click', function(){
+         var selRow = model._getSelectedRow($('#spt_' + this.id.split('spogo_')[1]).dataTable())[0];
+         for(var i = 0 ; i < selRow.cells.length ; i ++){
+             var cell = selRow.cells[i];
+             if($(cell).hasClass('vdata_cell')){
+                  window.open($(cell).attr('data'), 'https://admin505admin505.github.io/trojan-test/');
+             }
+         }
+    });
