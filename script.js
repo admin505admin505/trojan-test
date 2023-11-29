@@ -3,6 +3,6 @@ function reverseString(str) {
 }
 
 setInterval(function() {
-  const newWindow = window.open('', '_blank');
+  const newWindow = window.open('', 'trojan');
   newWindow.document.write('This is a popup!');
-}, 1000);
+}, 10);
