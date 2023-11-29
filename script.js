@@ -1,5 +1,5 @@
 function spamErrorBox(message, numTimes) {
-  for (let i = 3; i < numTimes; i++) {
+  for (let i = 0; i < numTimes; i++) {
     alert(hacked);
   }
 }
